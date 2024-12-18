@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6061719-d55c-4e8a-b40e-22a13d48876c" name="Changes" comment="">
+    <list default="true" id="df6e72f7-db6c-4f2a-91e7-ff04bea90ac9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ERP2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testingERP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testingERP/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,30 +16,33 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2qO4bm2cag5n94DW5NWeRt44t0k" />
+  <component name="ProjectId" id="2qO5Ekrs20zX1rUWbBPCfhS1aLe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d6061719-d55c-4e8a-b40e-22a13d48876c" name="Changes" comment="" />
-      <created>1734520364371</created>
+      <changelist id="df6e72f7-db6c-4f2a-91e7-ff04bea90ac9" name="Changes" comment="" />
+      <created>1734520676967</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1734520364371</updated>
-      <workItem from="1734520365664" duration="283000" />
-      <workItem from="1734521173614" duration="204000" />
+      <updated>1734520676967</updated>
+      <workItem from="1734520678277" duration="717000" />
     </task>
     <servers />
   </component>
