@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27956233-9e53-4621-92a1-04bc9c66701c" name="Changes" comment="no message yet" />
+    <list default="true" id="27956233-9e53-4621-92a1-04bc9c66701c" name="Changes" comment="this commit regarding new project for erp" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,11 +27,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/developer/ERPAuto/testingERP",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -44,6 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1734515938911</updated>
       <workItem from="1734515940565" duration="168000" />
+      <workItem from="1734520010759" duration="1158000" />
     </task>
     <task id="LOCAL-00001" summary="no message yet">
       <option name="closed" value="true" />
@@ -53,7 +60,31 @@
       <option name="project" value="LOCAL" />
       <updated>1734516107005</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="no message yet">
+      <option name="closed" value="true" />
+      <created>1734520085660</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734520085660</updated>
+    </task>
+    <task id="LOCAL-00003" summary="no message yet">
+      <option name="closed" value="true" />
+      <created>1734520861422</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734520861422</updated>
+    </task>
+    <task id="LOCAL-00004" summary="this commit regarding new project for erp">
+      <option name="closed" value="true" />
+      <created>1734521070755</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734521070755</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -61,6 +92,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="no message yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="no message yet" />
+    <MESSAGE value="this commit regarding new project for erp" />
+    <option name="LAST_COMMIT_MESSAGE" value="this commit regarding new project for erp" />
   </component>
 </project>
