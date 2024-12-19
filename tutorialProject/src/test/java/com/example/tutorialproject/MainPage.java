@@ -10,6 +10,9 @@ public class MainPage {
     @FindBy(xpath = "//*[@data-test-marker='Developer Tools']")
     public WebElement seeDeveloperToolsButton;
 
+    @FindBy(xpath = "//*[@data-test='suggestion-action']")
+    public WebElement findYourToolsButton;
+
     @FindBy(xpath = "//div[@data-test='main-menu-item' and @data-test-marker = 'Developer Tools']")
     public WebElement toolsMenu;
 
