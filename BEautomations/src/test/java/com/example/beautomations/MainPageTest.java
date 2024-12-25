@@ -1,5 +1,6 @@
 package com.example.beautomations;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import static org.testng.Assert.*;
@@ -14,19 +15,15 @@ import java.time.Duration;
 
 public class MainPageTest {
     private WebDriver driver;
-    private MainPage mainPage;
 
     @BeforeMethod
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        // Fix the issue https://github.com/SeleniumHQ/selenium/issues/11750
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.jetbrains.com/");
-
-        mainPage = new MainPage(driver);
+        driver.get("https://www.google.com/");
     }
 
     @AfterMethod
@@ -34,35 +31,14 @@ public class MainPageTest {
         driver.quit();
     }
 
-    @Test
-    public void search() {
-        mainPage.searchButton.click();
-
-        WebElement searchField = driver.findElement(By.cssSelector("[data-test='search-input']"));
-        searchField.sendKeys("Selenium");
-
-        WebElement submitButton = driver.findElement(By.cssSelector("button[data-test='full-search-button']"));
-        submitButton.click();
-
-        WebElement searchPageField = driver.findElement(By.cssSelector("input[data-test='search-input']"));
-        assertEquals(searchPageField.getAttribute("value"), "Selenium");
-    }
 
     @Test
-    public void toolsMenu() {
-        mainPage.toolsMenu.click();
-
-        WebElement menuPopup = driver.findElement(By.cssSelector("div[data-test='main-submenu']"));
-        assertTrue(menuPopup.isDisplayed());
+    public void titleAssert() {
+        for (int i=0;i<=6;i++) {
+            WebElement title = driver.findElement(By.xpath("/html/head/title"));
+            Assert.assertEquals(driver.getTitle(), "Google", "title should be a match");
+            System.out.println(i);
+        }
     }
 
-    @Test
-    public void navigationToAllTools() {
-        mainPage.seeDeveloperToolsButton.click();
-        mainPage.findYourToolsButton.click();
-
-        WebElement productsList = driver.findElement(By.id("products-page"));
-        assertTrue(productsList.isDisplayed());
-        assertEquals(driver.getTitle(), "All Developer Tools and Products by JetBrains");
-    }
 }
