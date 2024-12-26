@@ -1,0 +1,54 @@
+import com.opencsv.CSVReader;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+public class UserRegistrationAutomation {
+
+    public static void main(String[] args) throws IOException {
+        String testDataFile = "user_data.csv";
+        String baseUrl = "https://example.com/register";
+
+        // Create a new instance of the Chrome driver
+        WebDriver driver = new ChromeDriver();
+
+        // Read test data from CSV file using OpenCSV library
+        try (CSVReader reader = new CSVReader(new FileReader(testDataFile))) {
+            String[] nextLine;
+            while ((nextLine = reader.readNext()) != null) {
+                // Extract data from the CSV row
+                String username = nextLine[0];
+                String email = nextLine[1];
+                String password = nextLine[2];
+
+                // Execute the user registration
+                registerUser(baseUrl, driver, username, email, password);
+            }
+        }
+
+        // Close the browser
+        driver.quit();
+    }
+
+    private static void registerUser(String baseUrl, WebDriver driver, String username, String email, String password) {
+        // Navigate to the registration page
+        driver.get(baseUrl);
+
+        // Locate form elements and fill in the data
+        WebElement usernameField = driver.findElement(By.id("username"));
+        WebElement emailField = driver.findElement(By.id("email"));
+        WebElement passwordField = driver.findElement(By.id("password"));
+
+        usernameField.sendKeys(username);
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
+
+        // Submit the form
+        passwordField.sendKeys(Keys.RETURN);
+    }
+}        
