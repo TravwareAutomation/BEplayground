@@ -4,9 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
@@ -74,7 +71,6 @@ public class MainPage {
     }
     //setting distinations
     public void flightDistinations(WebDriver driver) {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // entring flight details (cities )
         //choosing depart city
@@ -93,7 +89,7 @@ public class MainPage {
         //SearchButton.click();
 
     }
-    public void flighDates(WebDriver driver){
+    public void flighDates(){
         DepartingDateField.sendKeys("06/15");
     }
     //constructor for this Class to enable using it in other classes

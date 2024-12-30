@@ -1,19 +1,10 @@
 package com.example.beaportal;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
-import static org.testng.Assert.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriver.*;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
-import java.util.List;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
 public class MainPageTest {
     private WebDriver driver;
 
@@ -33,7 +24,7 @@ public class MainPageTest {
     public void regressionflight(){
             mainPage.flightType(driver);
             mainPage.flightDistinations(driver);
-            mainPage.flighDates(driver);
+            mainPage.flighDates();
     }
 
 }
