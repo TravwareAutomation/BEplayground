@@ -96,6 +96,7 @@ public class MainPage {
     public void flighDates(WebDriver driver){
         DepartingDateField.sendKeys("06/15");
     }
+    //constructor for this Class to enable using it in other classes
         public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }

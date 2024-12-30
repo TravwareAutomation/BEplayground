@@ -21,7 +21,6 @@ public class MainPageTest {
         @BeforeMethod
         public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        // Fix the issue https://github.com/SeleniumHQ/selenium/issues/11750
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
