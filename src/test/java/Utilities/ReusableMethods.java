@@ -42,8 +42,8 @@ public class ReusableMethods {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     public String searchViaName(WebDriver driver) throws IOException {
-        ReusableMethods fileReused=new ReusableMethods(driver);
         String scannedUser;
+        ReusableMethods fileReused=new ReusableMethods(driver);
         CSVReader csvReader = new CSVReader(fileReused.filereader);
         scannedUser= Arrays.toString(csvReader.readNext());
         System.out.println(scannedUser.substring(1,(scannedUser.length()-4)));

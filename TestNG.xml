@@ -8,7 +8,7 @@
                     <include name="regressionrole"/>
                     <exclude name="regressiondash"/>
                     <include name="regressionAllRoles"/>
-                    <include name="deleteUser"/>
+                    <include name="regressionDeleteUser"/>
                 </methods>
             </class>
         </classes>
