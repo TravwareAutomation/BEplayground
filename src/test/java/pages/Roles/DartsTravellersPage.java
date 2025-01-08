@@ -7,13 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Objects;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 // page_url = https://www.jetbrains.com/
-public class MainPageBE {
+public class DartsTravellersPage {
     public String site="https://b2c.dartstravelers.com/";
 // flight passenger and class details
 
@@ -94,7 +93,7 @@ public class MainPageBE {
         DepartingDateField.sendKeys("06/15");
     }
     //constructor for this Class to enable using it in other classes
-        public MainPageBE(WebDriver driver) {
+        public DartsTravellersPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 }

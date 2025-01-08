@@ -5,12 +5,27 @@
             <class name="com.example.beaportal.MainPageTest">
                 <methods>
                     <exclude name="regressionflight"/>
-                    <include name="regressionrole"/>
+                    <exclude name="regressionrole"/>
                     <exclude name="regressiondash"/>
-                    <include name="regressionAllRoles"/>
-                    <include name="regressionDeleteUser"/>
+                    <exclude name="regressionAllRoles"/>
+                    <exclude name="regressionDeleteUser"/>
+                    <exclude name="editTest"/>
                 </methods>
             </class>
         </classes>
     </test>
+<!--    <test name="Test2">-->
+<!--        <classes>-->
+<!--            <class name="com.example.beaportal.MainPageTest">-->
+<!--                <methods>-->
+<!--                    <exclude name="regressionflight"/>-->
+<!--                    <include name="regressionrole"/>-->
+<!--                    <include name="regressiondash"/>-->
+<!--                    <include name="regressionAllRoles"/>-->
+<!--                    <include name="regressionDeleteUser"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
 </suite>
