@@ -4,10 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pages.Roles.AllRolesPage;
-import pages.Roles.DashboardPage;
-import pages.Roles.DartsTravellersPage;
+import pages.BEpages.DashboardPage;
+import pages.BEpages.DartsTravellersPage;
 import pages.Roles.NewRolePage;
+import pages.Users.AllUsersPage;
+import pages.Users.NewUserPage;
 
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
@@ -25,9 +28,9 @@ public class MainPageTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-//    @AfterMethod
+    //    @AfterMethod
 //    public void tearDown() {driver.quit();}
-    /* @Test
+    /* @Testagencies
      public void regressionflight(){
              mainPage = new MainPageBE(driver);
              driver.get(mainPage.site);
@@ -61,9 +64,26 @@ public class MainPageTest {
         allRoles.openAllRolesPage(driver);
         allRoles.DeleteUserAllRoles(driver);
     }
-//    @Test(priority =5)
-//    public void editTest() throws IOException {
-//        AllRolesPage allRoles = new AllRolesPage(driver);
-//        allRoles.editOption(driver);
-//    }
+    @Test( priority = 5)
+    public void creatingNewUser() throws IOException, AWTException{
+        NewUserPage newUser = new NewUserPage(driver);
+        newUser.loginNewUsers(driver);
+        newUser.creatingNewUser(driver);
+        newUser.choosingAgency(driver);
+        newUser.settingStatus();
+        newUser.settingCountry(driver);
+        newUser.settingPhoneNumber(driver);
+        newUser.submittingForm(driver);
+    }
+    @Test(priority = 6)
+    public void allUsresSearch() throws IOException, AWTException {
+        AllUsersPage allusers=new AllUsersPage(driver);
+        allusers.loginNewUsers(driver);
+        //allusers.searchBarAllRoles(driver);
+        allusers.choosingAgency(driver);
+        allusers.getListOfUsers();
+        allusers.clearFilters();
+    }
 }
+
+//
