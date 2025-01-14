@@ -1,39 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test1"
            tests="1"
-           failures="1"
+           failures="0"
            errors="0"
            skipped="0"
-           time="19.984">
+           time="17.024">
     <properties></properties>
 
+
+
             <testcase
-                name="editTest"
-                time="19.984"
+                name="creatingNewUser"
+                time="17.024"
                 classname="com.example.beaportal.MainPageTest">
-
-            <failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;tag name&quot;,&quot;selector&quot;:&quot;div&quot;}
-  (Session info: chrome=131.0.6778.204)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.5.0-28-generic&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [10dc9f512ad6e2163453c928f3c72e0c, findChildElement {id=f.80AFCCF7672E9645981B20F46B5B33C1.d.9FBB38EE20082F0AE7D2FEC873D1AB1E.e.101, value=div, using=tag name}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.204, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35021}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35021/devtoo..., se:cdpVersion: 131.0.6778.204, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 10dc9f512ad6e2163453c928f3c72e0c">
-                <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"tag name","selector":"div"}
-  (Session info: chrome=131.0.6778.204)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-28-generic', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [10dc9f512ad6e2163453c928f3c72e0c, findChildElement {id=f.80AFCCF7672E9645981B20F46B5B33C1.d.9FBB38EE20082F0AE7D2FEC873D1AB1E.e.101, value=div, using=tag name}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.204, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35021}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35021/devtoo..., se:cdpVersion: 131.0.6778.204, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 10dc9f512ad6e2163453c928f3c72e0c
-                java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:211)pages.Roles.EditPage.getAllPermissions(EditPage.java:26)pages.Roles.AllRolesPage.editOption(AllRolesPage.java:65)com.example.beaportal.MainPageTest.editTest(MainPageTest.java:67)java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)java.base/java.lang.reflect.Method.invoke(Method.java:580)org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)java.base/java.util.ArrayList.forEach(ArrayList.java:1597)org.testng.TestRunner.privateRun(TestRunner.java:739)org.testng.TestRunner.run(TestRunner.java:614)org.testng.SuiteRunner.runTest(SuiteRunner.java:421)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)org.testng.SuiteRunner.run(SuiteRunner.java:312)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)org.testng.TestNG.runSuitesLocally(TestNG.java:1208)org.testng.TestNG.runSuites(TestNG.java:1112)org.testng.TestNG.run(TestNG.java:1079)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-]]>
-            </failure>
-    </testcase>
-
-
+            </testcase>
 </testsuite>

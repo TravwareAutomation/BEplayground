@@ -19,8 +19,6 @@ public class Utilities {
         TargetDay=Integer.parseInt(Day);
         TargetMonth=Integer.parseInt(Month);
         TargetYear=Integer.parseInt(Year);
-
-
     }
     public static void getCurrentDate(){
         Calendar calender=Calendar.getInstance();

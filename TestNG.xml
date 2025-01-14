@@ -2,36 +2,52 @@
 <suite name="Suite1" verbose="1" >
     <test name="Test1">
         <classes>
-            <class name="com.example.beaportal.MainPageTest">
+<!--            <class name="com.example.beaportal.MainPageTest">-->
+<!--                <methods>-->
+<!--                    <exclude name="regressionflight"/>-->
+<!--                    <exclude name="regressionrole"/>-->
+<!--                    <exclude name="regressiondash"/>-->
+<!--                    <exclude name="regressionAllRoles"/>-->
+<!--                    <exclude name="regressionDeleteUser"/>-->
+<!--                    <exclude name="editTest"/>-->
+<!--                    <include name="creatingNewUser"/>-->
+<!--                    <exclude name="allUsresSearch"/>-->
+<!--                    <exclude name="agenciesCreatePage"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="pages.BEpages.BEpagesTests">
                 <methods>
-                    <exclude name="regressionflight"/>
-                    <exclude name="regressionrole"/>
                     <exclude name="regressiondash"/>
-                    <exclude name="regressionAllRoles"/>
-                    <exclude name="regressionDeleteUser"/>
-                    <exclude name="editTest"/>
-                    <exclude name="creatingNewUser"/>
-                    <include name="allUsresSearch"/>
+                </methods>
+            </class>
+            <class name="pages.Roles.RolesTests">
+                <methods>
+<!--                    <exclude name="regressionrole"/>-->
+<!--                    <exclude name="regressionAllRoles"/>-->
+<!--                    <exclude name="regressionDeleteUser"/>-->
 
+                    <exclude name="regressionrole"/>
+                    <exclude name="regressionAllRoles"/>
+                    <include name="regressionDeleteUser"/>
+                </methods>
+            </class>
+            <class name="pages.Users.UsersTests">
+                <methods>
+                    <exclude name="creatingNewUser"/>
+                    <exclude name="allUsresSearch"/>
+<!--                    <include name="creatingNewUser"/>-->
+<!--                    <include name="allUsresSearch"/>-->
+                </methods>
+            </class>
+            <class name="pages.Agencies.AgenciesTests">
+                <methods>
+                    <exclude name="agenciesCreatePage"/>
+<!--                    <include name="agenciesCreatePage"/>-->
                 </methods>
             </class>
         </classes>
     </test>
-<!--    <test name="Test2">-->
-<!--        <classes>-->
-<!--            <class name="com.example.beaportal.MainPageTest">-->
-<!--                <methods>-->
-<!--                    <exclude name="regressionflight"/>-->
-<!--                    <include name="regressionrole"/>-->
-<!--                    <include name="regressiondash"/>-->
-<!--                    <include name="regressionAllRoles"/>-->
-<!--                    <include name="regressionDeleteUser"/>-->
-<!--                    <exclude name="editTest"/>-->
-<!--                    <include name="creatingNewUser"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+
 <!--    <test name="Test3">-->
 <!--    <classes>-->
 <!--        <class name="com.example.beaportal.MainPageTest">-->

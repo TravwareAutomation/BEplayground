@@ -17,15 +17,15 @@ import java.time.Duration;
 import java.util.*;
 
 public class AllRolesPage {
-    @FindBy(xpath = "/html/body/div/div/div[2]/div[2]/div/div[2]/div[1]/div[1]/div/div/input")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/div[1]/div/div/input")
     public WebElement searchBarAllRolesPage;
     @FindBy(xpath = "/html/body/div/div/div[2]/div[1]/div/div/div/div/div/div[1]/ul/li/div/div[2]/div/ul/li[1]/a")
     public WebElement allRoles;
-    @FindBy(id = "radix-:r1:")
-    public WebElement optionsMenu;
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/table/tbody")
+    public WebElement tableBody;
     public WebElement deleteButton;
     public WebElement editButton;
-    @FindBy(id = "radix-:r2:")
+    @FindBy(id = "radix-:ru7:")
     public WebElement actionsMenu;
     public List<WebElement> deleteDialogue;
     public List<WebElement> editDialogue;
@@ -33,17 +33,17 @@ public class AllRolesPage {
 
     public void openAllRolesPage(WebDriver driver) throws IOException {
 
-        ReusableMethods logInReused=new ReusableMethods(driver);
-        logInReused.logIn(driver);
+        ReusableMethods reusables=new ReusableMethods(driver);
+        reusables.logIn(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        logInReused.roleTabDropdown.click();
+        reusables.roleTabDropdown.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         allRoles.click();
     }
     public void searchBarAllRoles(WebDriver driver) throws IOException {
-        ReusableMethods searchReused=new ReusableMethods(driver);
+        ReusableMethods reusables=new ReusableMethods(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        searchBarAllRolesPage.sendKeys(searchReused.searchViaName(driver));
+        searchBarAllRolesPage.sendKeys(reusables.searchViaName(driver));
     }
 
     public void editOption(WebDriver driver) throws IOException {
@@ -51,23 +51,20 @@ public class AllRolesPage {
         EditPage editPage = new EditPage(driver);
         openAllRolesPage(driver);
         //Opening Edit page
-        ReusableMethods deleteReused=new ReusableMethods(driver);
+        ReusableMethods reusables=new ReusableMethods(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        searchBarAllRolesPage.sendKeys(deleteReused.searchViaName(driver));
+        searchBarAllRolesPage.sendKeys(reusables.searchViaName(driver));
 
-        optionsMenu.click();
+        tableBody.findElements(By.tagName("tr")).get(0).findElements(By.tagName("td")).
+                get(5).findElement(By.tagName("button")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        editDialogue=actionsMenu.findElements(By.tagName("div"));
-        editButton=editDialogue.get(2);
-        editButton.click();
+        actionsMenu.findElements(By.tagName("div")).get(2).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div[1]/a[3]")));
         editPage.getAllPermissions(driver);
 
     }
-    public void DeleteUserAllRoles(WebDriver driver) throws IOException, InterruptedException {
-
-        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+    public void DeleteUserAllRoles(WebDriver driver) throws IOException {
         //wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dialog-description")));
         //using ReusableMethods to search in all roles page
         ReusableMethods deleteReused=new ReusableMethods(driver);
@@ -76,21 +73,20 @@ public class AllRolesPage {
 
         //clicking options menu
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        optionsMenu.click();
+        tableBody.findElements(By.tagName("tr")).get(0).findElements(By.tagName("td")).
+                get(5).findElement(By.tagName("button")).click();
 
         //clicking the delete button in action menu
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        assertTrue(actionsMenu.isDisplayed());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        deleteDialogue=actionsMenu.findElements(By.tagName("div"));
-        deleteButton=deleteDialogue.get(3);
-        deleteButton.click();
+        actionsMenu.findElements(By.tagName("div")).get(3).click();
+
 
         //agreeing to delete role
         Actions action = new Actions(driver);
         List<WebElement> menuDiv1=driver.findElements(By.tagName("div"));
-        deleteDialogueAgreeButton = menuDiv1.get(162).findElement(By.tagName("button"));
-        deleteDialogueAgreeButton.click();
+        deleteDialogueAgreeButton = menuDiv1.get(150).findElement(By.partialLinkText("agree"));
+        System.out.println(deleteDialogueAgreeButton.getText());
         //wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dialog-description")));
     }
 

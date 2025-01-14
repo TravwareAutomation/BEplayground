@@ -3,6 +3,7 @@ import org.testng.annotations.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import pages.Agencies.Agencies;
 import pages.Roles.AllRolesPage;
 import pages.BEpages.DashboardPage;
 import pages.BEpages.DartsTravellersPage;
@@ -59,7 +60,7 @@ public class MainPageTest {
         allRoles.searchBarAllRoles(driver);
     }
     @Test(priority = 4)
-    public void regressionDeleteUser() throws IOException, InterruptedException {
+    public void regressionDeleteUser() throws IOException {
         AllRolesPage allRoles = new AllRolesPage(driver);
         allRoles.openAllRolesPage(driver);
         allRoles.DeleteUserAllRoles(driver);
@@ -68,7 +69,7 @@ public class MainPageTest {
     public void creatingNewUser() throws IOException, AWTException{
         NewUserPage newUser = new NewUserPage(driver);
         newUser.loginNewUsers(driver);
-        newUser.creatingNewUser(driver);
+        newUser.newUserCredentials(driver);
         newUser.choosingAgency(driver);
         newUser.settingStatus();
         newUser.settingCountry(driver);
@@ -83,6 +84,16 @@ public class MainPageTest {
         allusers.choosingAgency(driver);
         allusers.getListOfUsers();
         allusers.clearFilters();
+    }
+    @Test(priority = 7)
+    public void agenciesCreatePage() throws AWTException, IOException {
+        Agencies createAgency = new Agencies(driver);
+        createAgency.loginNewAgency(driver);
+        createAgency.setCredentials(driver);
+        createAgency.setAgencyStatus();
+        createAgency.setAgencyCountryCode(driver);
+        createAgency.setAgencyType();
+        createAgency.addAgency(driver);
     }
 }
 

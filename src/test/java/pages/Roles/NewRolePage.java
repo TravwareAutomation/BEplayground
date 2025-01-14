@@ -23,18 +23,18 @@ public class NewRolePage {
     public WebElement roleTabDropdown;
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div/div/div/div/div/div[1]/ul/li/div/div[2]/div/ul/li[2]/a")
     public WebElement createRoleOptionDropdown;
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div/div[2]/form/div[1]/div[1]/input")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/form/div[1]/div[1]/input")
     public WebElement roleName;
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div/div[2]/form/div[1]/div[2]/input")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/form/div[1]/div[2]/input")
     public WebElement roleLevel;
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div/div[2]/form/div[2]/button")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/form/div[2]/button")
     public WebElement newRoleButton;
 
     // LOCATIONS OF CHECKBOXEX IN NEW ROLE PAGE
     //div containing all the checkboxs
-    @FindBy(xpath = "/html/body/div/div/div[2]/div[2]/div/div[3]/button")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[3]/button")
     public WebElement updateButton;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div[2]/div")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[1]/div/div[2]/div")
     public WebElement confirmBooking;
 
 
@@ -64,6 +64,7 @@ public class NewRolePage {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         confirmBooking.findElement(By.id("category-1")).click();
         localName=confirmBooking.findElement(By.tagName("h3")).getText();
+        System.out.println(localName);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         updateButton.click();
 

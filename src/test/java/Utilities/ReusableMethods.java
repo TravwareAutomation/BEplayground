@@ -1,5 +1,6 @@
 package Utilities;
 
+import com.google.common.primitives.Ints;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import org.openqa.selenium.WebDriver;
@@ -67,11 +68,27 @@ public class ReusableMethods {
             newRobot.keyRelease(KeyEvent.getExtendedKeyCodeForChar(key));
             newRobot.delay(500);
         }
+        newRobot.delay(1000);
         newRobot.keyPress(KeyEvent.VK_ENTER);
         newRobot.keyRelease(KeyEvent.VK_ENTER);
-        newRobot.delay(1000);
         newRobot.delay(500);
+    }
+    public void settingCredintials(WebElement[] locators,String[] data) throws AWTException {
+        Robot newRobot = new Robot();
+        newRobot.delay(800);
+        for(WebElement element: locators){
 
+            if (locators[Arrays.asList(locators).indexOf(element)]!=null){
+                System.out.println(locators[Arrays.asList(locators).indexOf(element)].getText());
+                locators[Arrays.asList(locators).indexOf(element)].
+                        sendKeys(data[Arrays.asList(locators).indexOf(element)]);
+                newRobot.delay(300);
+            }
+            else {
+                System.out.println("else entered --> "+Arrays.asList(locators).indexOf(element));
+                continue;
+            }
+        }
     }
 
     public ReusableMethods(WebDriver driver) throws FileNotFoundException {
