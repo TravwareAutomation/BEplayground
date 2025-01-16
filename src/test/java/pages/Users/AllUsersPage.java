@@ -32,12 +32,15 @@ public class AllUsersPage {
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/button[1]")
     public WebElement clearButton;
 
-    public void loginNewUsers(WebDriver driver) throws IOException {
+    public void loginNewUsers(WebDriver driver) throws IOException, AWTException {
         ReusableMethods reusables=new ReusableMethods(driver);
         reusables.logIn(driver);
-        usersTap.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        allUsersTab.click();
+        navigateToTab(driver);
+    }
+    public void navigateToTab(WebDriver driver) throws FileNotFoundException, AWTException {
+        ReusableMethods reusables =new ReusableMethods(driver);
+        WebElement[] tabs={usersTap,allUsersTab};
+        reusables.navigateToTab(tabs);
     }
     public void searchBarAllRoles(WebDriver driver) throws IOException {
         ReusableMethods reusables=new ReusableMethods(driver);

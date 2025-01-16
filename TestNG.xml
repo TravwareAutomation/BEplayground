@@ -26,8 +26,8 @@
 <!--                    <exclude name="regressionAllRoles"/>-->
 <!--                    <exclude name="regressionDeleteUser"/>-->
 
-                    <exclude name="regressionrole"/>
-                    <exclude name="regressionAllRoles"/>
+                    <include name="regressionrole"/>
+                    <include name="regressionAllRoles"/>
                     <include name="regressionDeleteUser"/>
                 </methods>
             </class>

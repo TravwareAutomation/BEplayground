@@ -12,8 +12,12 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.*;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Random;
+
+import static org.testng.Assert.assertTrue;
 
 public class ReusableMethods {
     public String site="https://b2e.travware.com/dashboard";
@@ -23,8 +27,7 @@ public class ReusableMethods {
     public WebElement DashboardPassword;
     @FindBy(xpath = "/html/body/div[1]/div/div/div/div[2]/form/div[3]/button")
     public WebElement DashboardLogInButton;
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div/div/div/div/div/div[1]/ul/li/div/div[1]/div/div[2]/h2")
-    public WebElement roleTabDropdown;
+
     public String user="b2e.travware@travware.com";
     public String pass="password";
     public File file = new File("/home/developer/master/BEAPortal/src/test/java/pages/username.csv");
@@ -61,18 +64,6 @@ public class ReusableMethods {
         writer.close();
         return localName;
     }
-    public void keyStrokes(char[] keys) throws AWTException {
-        Robot newRobot=new Robot();
-        for (char key : keys) {
-            newRobot.keyPress(KeyEvent.getExtendedKeyCodeForChar(key));
-            newRobot.keyRelease(KeyEvent.getExtendedKeyCodeForChar(key));
-            newRobot.delay(500);
-        }
-        newRobot.delay(1000);
-        newRobot.keyPress(KeyEvent.VK_ENTER);
-        newRobot.keyRelease(KeyEvent.VK_ENTER);
-        newRobot.delay(500);
-    }
     public void settingCredintials(WebElement[] locators,String[] data) throws AWTException {
         Robot newRobot = new Robot();
         newRobot.delay(800);
@@ -90,7 +81,37 @@ public class ReusableMethods {
             }
         }
     }
+    public void keyStrokes(char[] keys) throws AWTException {
+        Robot newRobot=new Robot();
+        for (char key : keys) {
+            //char[] arr={'E','G',};
+            newRobot.keyPress(KeyEvent.getExtendedKeyCodeForChar(key));
+            newRobot.keyRelease(KeyEvent.getExtendedKeyCodeForChar(key));
+            newRobot.delay(500);
+        }
+        newRobot.delay(1000);
+        newRobot.keyPress(KeyEvent.VK_ENTER);
+        newRobot.keyRelease(KeyEvent.VK_ENTER);
+        newRobot.delay(500);
+    }
+    // Method to calculate the arrival date based on departure date and number of days to stay
+    public static String[] calculateFlightDates(String departureDate, int numberOfDaysToStay) {
 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate departure = LocalDate.parse(departureDate, formatter);
+        LocalDate arrival = departure.plusDays(numberOfDaysToStay);
+        String formattedDepartureDate = departure.format(formatter);
+        String formattedArrivalDate = arrival.format(formatter);
+
+        // Return both dates as a string array
+        return new String[] {formattedDepartureDate, formattedArrivalDate};
+    }
+    public void navigateToTab(WebElement[] tabs) throws AWTException {
+        Robot newRobot=new Robot();
+        newRobot.delay(500);
+        tabs[0].click();
+        tabs[1].click();
+    }
     public ReusableMethods(WebDriver driver) throws FileNotFoundException {
         PageFactory.initElements(driver, this);
     }

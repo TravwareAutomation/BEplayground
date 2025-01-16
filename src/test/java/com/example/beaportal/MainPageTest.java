@@ -3,7 +3,8 @@ import org.testng.annotations.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pages.Agencies.Agencies;
+import pages.Agencies.CreateNewAgencies;
+import pages.Agencies.CreateNewAgencies;
 import pages.Roles.AllRolesPage;
 import pages.BEpages.DashboardPage;
 import pages.BEpages.DartsTravellersPage;
@@ -48,19 +49,19 @@ public class MainPageTest {
     }
 
     @Test(priority = 2)
-    public void regressionrole() throws IOException {
+    public void regressionrole() throws IOException, AWTException {
         NewRolePage role = new NewRolePage(driver);
         role.logIn(driver);
         role.roleCreation(driver);
     }
     @Test(priority = 3)
-    public void regressionAllRoles() throws IOException {
+    public void regressionAllRoles() throws IOException, AWTException {
         AllRolesPage allRoles = new AllRolesPage(driver);
         allRoles.openAllRolesPage(driver);
         allRoles.searchBarAllRoles(driver);
     }
     @Test(priority = 4)
-    public void regressionDeleteUser() throws IOException {
+    public void regressionDeleteUser() throws IOException, AWTException {
         AllRolesPage allRoles = new AllRolesPage(driver);
         allRoles.openAllRolesPage(driver);
         allRoles.DeleteUserAllRoles(driver);
@@ -87,7 +88,7 @@ public class MainPageTest {
     }
     @Test(priority = 7)
     public void agenciesCreatePage() throws AWTException, IOException {
-        Agencies createAgency = new Agencies(driver);
+        CreateNewAgencies createAgency = new CreateNewAgencies(driver);
         createAgency.loginNewAgency(driver);
         createAgency.setCredentials(driver);
         createAgency.setAgencyStatus();

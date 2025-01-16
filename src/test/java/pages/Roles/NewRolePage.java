@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.NoAlertPresentException;
 import static org.testng.Assert.assertTrue;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -43,17 +44,18 @@ public class NewRolePage {
         ReusableMethods reusables = new ReusableMethods(driver);
         reusables.logIn(driver);
     }
-
-    public void roleCreation(WebDriver driver) throws IOException {
+    public void navigateToTab(WebDriver driver) throws FileNotFoundException, AWTException {
+        ReusableMethods reusables =new ReusableMethods(driver);
+        WebElement[] tabs={roleTabDropdown,createRoleOptionDropdown};
+        reusables.navigateToTab(tabs);
+    }
+    public void roleCreation(WebDriver driver) throws IOException, AWTException {
         Random rand = new Random();
         int rand_int1 = rand.nextInt((5-1)+1)+1;
         String localName="";
         localName=rolenameCreation("Hassan No.",driver);
 
-        roleTabDropdown.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        createRoleOptionDropdown.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        navigateToTab(driver);
 
         assertTrue(roleName.isDisplayed());
         roleName.sendKeys(localName);

@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.Agencies.Agencies;
+import pages.Agencies.CreateNewAgencies;
 import pages.BEpages.DartsTravellersPage;
 import pages.BEpages.DashboardPage;
 import pages.Roles.AllRolesPage;
@@ -35,7 +35,7 @@ public class AgenciesTests {
 
     @Test(priority = 1)
     public void agenciesCreatePage() throws AWTException, IOException {
-        Agencies createAgency = new Agencies(driver);
+        CreateNewAgencies createAgency = new CreateNewAgencies(driver);
         createAgency.loginNewAgency(driver);
         createAgency.setCredentials(driver);
         createAgency.setAgencyStatus();

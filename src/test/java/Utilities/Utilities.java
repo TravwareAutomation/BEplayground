@@ -1,35 +1,31 @@
 package Utilities;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import java.util.Calendar;
 
 public class Utilities {
 
-    static int TargetDay=0,TargetMonth=0,TargetYear=0;
-    static int CurrentDay=0,CurrentMonth=0,CurrentYear=0;
-    static int JumpToMonth=0;
-    static boolean increment=true;
+    // Method to calculate the arrival date based on departure date and number of days to stay
+    public static String[] calculateFlightDates(String departureDate, int numberOfDaysToStay) {
+        // Define a date format for input and output
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
+        // Parse the departure date from string to LocalDate
+        LocalDate departure = LocalDate.parse(departureDate, formatter);
 
-    public static void getTargetDate(String DateToSet) {
-        int FirstIndex=DateToSet.indexOf("/");
-        int LastIndex=DateToSet.lastIndexOf("/");
-        String Day=DateToSet.substring(0,FirstIndex);
-        String Month=DateToSet.substring(FirstIndex+1,LastIndex);
-        String Year=DateToSet.substring(LastIndex+1,DateToSet.length()+1);
-        TargetDay=Integer.parseInt(Day);
-        TargetMonth=Integer.parseInt(Month);
-        TargetYear=Integer.parseInt(Year);
+        // Calculate the arrival date by adding the number of days to stay
+        LocalDate arrival = departure.plusDays(numberOfDaysToStay);
+
+        // Format the departure and arrival dates back to string
+        String formattedDepartureDate = departure.format(formatter);
+        String formattedArrivalDate = arrival.format(formatter);
+
+        // Return both dates as a string array
+        return new String[] {formattedDepartureDate, formattedArrivalDate};
     }
-    public static void getCurrentDate(){
-        Calendar calender=Calendar.getInstance();
-        CurrentDay=calender.get(Calendar.DAY_OF_MONTH);
-        CurrentMonth = calender.get(Calendar.MONTH)+1;
-        CurrentYear = calender.get(Calendar.YEAR);
-    }
-    public static void calculateMonthsToJump(){
-        if ((TargetMonth-CurrentMonth)>0){JumpToMonth=TargetMonth-CurrentMonth;}
-        else {JumpToMonth=CurrentMonth-TargetMonth;increment=false;}
-    }
+
 }
 
 

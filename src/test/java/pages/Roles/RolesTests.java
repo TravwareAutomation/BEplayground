@@ -9,6 +9,7 @@ import pages.BEpages.DartsTravellersPage;
 import pages.Roles.AllRolesPage;
 import pages.Roles.NewRolePage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.time.Duration;
 
@@ -29,19 +30,19 @@ public class RolesTests {
 
 
     @Test(priority = 1)
-    public void regressionrole() throws IOException {
+    public void regressionrole() throws IOException, AWTException {
         NewRolePage role = new NewRolePage(driver);
         role.logIn(driver);
         role.roleCreation(driver);
     }
     @Test(priority = 2)
-    public void regressionAllRoles() throws IOException {
+    public void regressionAllRoles() throws IOException, AWTException {
         AllRolesPage allRoles = new AllRolesPage(driver);
         allRoles.openAllRolesPage(driver);
         allRoles.searchBarAllRoles(driver);
     }
     @Test(priority = 3)
-    public void regressionDeleteUser() throws IOException {
+    public void regressionDeleteUser() throws IOException, AWTException {
         AllRolesPage allRoles = new AllRolesPage(driver);
         allRoles.openAllRolesPage(driver);
         allRoles.DeleteUserAllRoles(driver);

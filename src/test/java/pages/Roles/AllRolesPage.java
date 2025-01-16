@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.testng.Assert.assertTrue;
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
@@ -19,26 +19,28 @@ import java.util.*;
 public class AllRolesPage {
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/div[1]/div/div/input")
     public WebElement searchBarAllRolesPage;
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div/div/div/div/div/div[1]/ul/li/div/div[1]/div/div[2]/h2")
+    public WebElement roleTabDropdown;
     @FindBy(xpath = "/html/body/div/div/div[2]/div[1]/div/div/div/div/div/div[1]/ul/li/div/div[2]/div/ul/li[1]/a")
     public WebElement allRoles;
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/table/tbody")
     public WebElement tableBody;
-    public WebElement deleteButton;
     public WebElement editButton;
-    @FindBy(id = "radix-:ru7:")
+    @FindBy(css = ".text-red-600:nth-child(1)")
     public WebElement actionsMenu;
-    public List<WebElement> deleteDialogue;
-    public List<WebElement> editDialogue;
+    @FindBy(css = ".bg-red-600")
     public WebElement deleteDialogueAgreeButton;
 
-    public void openAllRolesPage(WebDriver driver) throws IOException {
+    public void openAllRolesPage(WebDriver driver) throws IOException, AWTException {
 
         ReusableMethods reusables=new ReusableMethods(driver);
         reusables.logIn(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        reusables.roleTabDropdown.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        allRoles.click();
+        navigateToTab(driver);
+    }
+    public void navigateToTab(WebDriver driver) throws FileNotFoundException, AWTException {
+        ReusableMethods reusables =new ReusableMethods(driver);
+        WebElement[] tabs={roleTabDropdown,allRoles};
+        reusables.navigateToTab(tabs);
     }
     public void searchBarAllRoles(WebDriver driver) throws IOException {
         ReusableMethods reusables=new ReusableMethods(driver);
@@ -46,7 +48,7 @@ public class AllRolesPage {
         searchBarAllRolesPage.sendKeys(reusables.searchViaName(driver));
     }
 
-    public void editOption(WebDriver driver) throws IOException {
+    public void editOption(WebDriver driver) throws IOException, AWTException {
         WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
         EditPage editPage = new EditPage(driver);
         openAllRolesPage(driver);
@@ -59,10 +61,9 @@ public class AllRolesPage {
                 get(5).findElement(By.tagName("button")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        actionsMenu.findElements(By.tagName("div")).get(2).click();
+        actionsMenu.findElements(By.tagName("div")).get(1).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div[1]/a[3]")));
         editPage.getAllPermissions(driver);
-
     }
     public void DeleteUserAllRoles(WebDriver driver) throws IOException {
         //wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dialog-description")));
@@ -77,19 +78,13 @@ public class AllRolesPage {
                 get(5).findElement(By.tagName("button")).click();
 
         //clicking the delete button in action menu
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        actionsMenu.findElements(By.tagName("div")).get(3).click();
-
+        actionsMenu.click();
 
         //agreeing to delete role
-        Actions action = new Actions(driver);
-        List<WebElement> menuDiv1=driver.findElements(By.tagName("div"));
-        deleteDialogueAgreeButton = menuDiv1.get(150).findElement(By.partialLinkText("agree"));
-        System.out.println(deleteDialogueAgreeButton.getText());
+        System.out .println(deleteDialogueAgreeButton.getText());
+        deleteDialogueAgreeButton.click();
         //wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dialog-description")));
     }
-
     public AllRolesPage(WebDriver driver) throws FileNotFoundException {
         PageFactory.initElements(driver, this);
     }

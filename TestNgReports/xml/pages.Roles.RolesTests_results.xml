@@ -1,39 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test1"
-           tests="1"
-           failures="1"
+           tests="3"
+           failures="0"
            errors="0"
            skipped="0"
-           time="17.739">
+           time="26.207">
     <properties></properties>
+
+
 
             <testcase
                 name="regressionDeleteUser"
-                time="17.739"
+                time="9.798"
                 classname="pages.Roles.RolesTests">
-
-            <failure type="org.openqa.selenium.WebDriverException" message="target frame detached
-  (failed to check if window was closed: disconnected: not connected to DevTools)
-  (Session info: chrome=131.0.6778.204)
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.5.0-28-generic&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f19550df1f9995a2332f4443bb1d0cfd, findElement {value=radix-:ru7:, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.204, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41063}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41063/devtoo..., se:cdpVersion: 131.0.6778.204, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f19550df1f9995a2332f4443bb1d0cfd">
-                <![CDATA[org.openqa.selenium.WebDriverException: target frame detached
-  (failed to check if window was closed: disconnected: not connected to DevTools)
-  (Session info: chrome=131.0.6778.204)
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-28-generic', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f19550df1f9995a2332f4443bb1d0cfd, findElement {value=radix-:ru7:, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.204, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41063}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41063/devtoo..., se:cdpVersion: 131.0.6778.204, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f19550df1f9995a2332f4443bb1d0cfd
-                java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)jdk.proxy2/jdk.proxy2.$Proxy14.findElements(Unknown Source)pages.Roles.AllRolesPage.DeleteUserAllRoles(AllRolesPage.java:82)pages.Roles.RolesTests.regressionDeleteUser(RolesTests.java:47)java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)java.base/java.lang.reflect.Method.invoke(Method.java:580)org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)java.base/java.util.ArrayList.forEach(ArrayList.java:1597)org.testng.TestRunner.privateRun(TestRunner.java:739)org.testng.TestRunner.run(TestRunner.java:614)org.testng.SuiteRunner.runTest(SuiteRunner.java:421)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)org.testng.SuiteRunner.run(SuiteRunner.java:312)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)org.testng.TestNG.runSuitesLocally(TestNG.java:1208)org.testng.TestNG.runSuites(TestNG.java:1112)org.testng.TestNG.run(TestNG.java:1079)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-]]>
-            </failure>
-    </testcase>
-
-
+            </testcase>
+            <testcase
+                name="regressionAllRoles"
+                time="7.222"
+                classname="pages.Roles.RolesTests">
+            </testcase>
+            <testcase
+                name="regressionrole"
+                time="9.187"
+                classname="pages.Roles.RolesTests">
+            </testcase>
 </testsuite>

@@ -18,7 +18,8 @@ import java.util.List;
 
 import static org.testng.Assert.assertTrue;
 
-public class Agencies {
+
+public class CreateNewAgencies {
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div/div/div/div/div/div[3]/ul/li/div/div[1]/div/div[2]/h2")
     public WebElement agenciesTab;
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div/div/div/div/div/div[3]/ul/li/div/div[2]/div/ul/li[2]/a")
@@ -52,12 +53,10 @@ public class Agencies {
 
 
     // logging in and opening agencies tap and accessing creating new agency option
-    public void loginNewAgency(WebDriver driver) throws IOException {
+    public void loginNewAgency(WebDriver driver) throws IOException, AWTException {
         ReusableMethods reusables=new ReusableMethods(driver);
         reusables.logIn(driver);
-        agenciesTab.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        createAgencyTab.click();
+        navigateToTab(driver);
     }
     public void setCredentials(WebDriver driver) throws FileNotFoundException, AWTException {
         WebElement[] locators={agencyName,agencyEmail,agencyAddress,agencyPhoneNumber,agencyTaxNumber,agencyNumberOfUsers};
@@ -65,6 +64,11 @@ public class Agencies {
         // ----number of employees( 5 )
         ReusableMethods reusables=new ReusableMethods(driver);
         reusables.settingCredintials(locators,data);
+    }
+    public void navigateToTab(WebDriver driver) throws FileNotFoundException, AWTException {
+        ReusableMethods reusables =new ReusableMethods(driver);
+        WebElement[] tabs={agenciesTab,createAgencyTab};
+        reusables.navigateToTab(tabs);
     }
     public void setAgencyStatus(){
         Select statusListOptions=new Select(agencyStatus);
@@ -95,7 +99,7 @@ public class Agencies {
 
         }
     }
-    public Agencies(WebDriver driver) {
+    public  CreateNewAgencies(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 }

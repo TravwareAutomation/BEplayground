@@ -60,6 +60,11 @@ public class NewUserPage {
         ReusableMethods loginReused=new ReusableMethods(driver);
         loginReused.logIn(driver);
     }
+    public void navigateToTab(WebDriver driver) throws FileNotFoundException, AWTException {
+        ReusableMethods reusables =new ReusableMethods(driver);
+        WebElement[] tabs={usersTap,createNewUser};
+        reusables.navigateToTab(tabs);
+    }
     //setting the name of the new user....
 
     public void createNewUserName(WebDriver driver) throws IOException {
@@ -120,10 +125,7 @@ public class NewUserPage {
 
     public void newUserCredentials(WebDriver driver) throws IOException, AWTException {
         //navigating the
-        usersTap.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        createNewUser.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        navigateToTab(driver);
         newUserCredentialsNEP(driver);
     }
     public NewUserPage(WebDriver driver) {
