@@ -1,6 +1,5 @@
 package Utilities;
 
-import com.google.common.primitives.Ints;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import org.openqa.selenium.WebDriver;
@@ -27,7 +26,6 @@ public class ReusableMethods {
     public WebElement DashboardPassword;
     @FindBy(xpath = "/html/body/div[1]/div/div/div/div[2]/form/div[3]/button")
     public WebElement DashboardLogInButton;
-
     public String user="b2e.travware@travware.com";
     public String pass="password";
     public File file = new File("/home/developer/master/BEAPortal/src/test/java/pages/username.csv");
@@ -71,6 +69,7 @@ public class ReusableMethods {
 
             if (locators[Arrays.asList(locators).indexOf(element)]!=null){
                 System.out.println(locators[Arrays.asList(locators).indexOf(element)].getText());
+                locators[Arrays.asList(locators).indexOf(element)].clear();
                 locators[Arrays.asList(locators).indexOf(element)].
                         sendKeys(data[Arrays.asList(locators).indexOf(element)]);
                 newRobot.delay(300);
@@ -111,6 +110,36 @@ public class ReusableMethods {
         newRobot.delay(500);
         tabs[0].click();
         tabs[1].click();
+    }
+    public void setStatus(String status) throws AWTException {
+        Robot newRobot = new Robot();
+        if (status.equals("Active")) {
+            newRobot.keyPress(KeyEvent.VK_ENTER);
+            newRobot.keyRelease(KeyEvent.VK_ENTER);
+        } else if (status.equals("inActive")) {
+            newRobot.keyPress(KeyEvent.VK_DOWN);
+            newRobot.keyRelease(KeyEvent.VK_DOWN);
+            newRobot.keyPress(KeyEvent.VK_ENTER);
+            newRobot.keyRelease(KeyEvent.VK_ENTER);
+        } else {
+            newRobot.keyPress(KeyEvent.VK_ENTER);
+            newRobot.keyRelease(KeyEvent.VK_ENTER);
+        }
+    }
+    public void setType(String Type) throws AWTException {
+        Robot newRobot = new Robot();
+        if (Type.equals("Travel Agency")) {
+            newRobot.keyPress(KeyEvent.VK_ENTER);
+            newRobot.keyRelease(KeyEvent.VK_ENTER);
+        } else if (Type.equals("Corporate")) {
+            newRobot.keyPress(KeyEvent.VK_DOWN);
+            newRobot.keyRelease(KeyEvent.VK_DOWN);
+            newRobot.keyPress(KeyEvent.VK_ENTER);
+            newRobot.keyRelease(KeyEvent.VK_ENTER);
+        } else {
+            newRobot.keyPress(KeyEvent.VK_ENTER);
+            newRobot.keyRelease(KeyEvent.VK_ENTER);
+        }
     }
     public ReusableMethods(WebDriver driver) throws FileNotFoundException {
         PageFactory.initElements(driver, this);

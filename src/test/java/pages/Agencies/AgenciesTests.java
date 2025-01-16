@@ -40,8 +40,16 @@ public class AgenciesTests {
         createAgency.setCredentials(driver);
         createAgency.setAgencyStatus();
         createAgency.setAgencyCountryCode(driver);
-        createAgency.setAgencyType();
+        createAgency.setAgencyType(driver);
         createAgency.addAgency(driver);
+    }
+    @Test(priority = 2)
+    public void allAgenciesPage() throws IOException, AWTException {
+        AllAgenciesPage agencies=new AllAgenciesPage(driver);
+        agencies.logIn(driver);
+        //agencies.openActionsMenu();
+//        agencies.openEditPage(driver);
+        agencies.openShowPage(driver);
     }
 }
 

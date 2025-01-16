@@ -22,13 +22,13 @@
             </class>
             <class name="pages.Roles.RolesTests">
                 <methods>
-<!--                    <exclude name="regressionrole"/>-->
-<!--                    <exclude name="regressionAllRoles"/>-->
-<!--                    <exclude name="regressionDeleteUser"/>-->
+                    <exclude name="regressionrole"/>
+                    <exclude name="regressionAllRoles"/>
+                    <exclude name="regressionDeleteUser"/>
 
-                    <include name="regressionrole"/>
-                    <include name="regressionAllRoles"/>
-                    <include name="regressionDeleteUser"/>
+<!--                    <include name="regressionrole"/>-->
+<!--                    <include name="regressionAllRoles"/>-->
+<!--                    <include name="regressionDeleteUser"/>-->
                 </methods>
             </class>
             <class name="pages.Users.UsersTests">
@@ -43,6 +43,7 @@
                 <methods>
                     <exclude name="agenciesCreatePage"/>
 <!--                    <include name="agenciesCreatePage"/>-->
+                    <include name="allAgenciesPage"/>
                 </methods>
             </class>
         </classes>

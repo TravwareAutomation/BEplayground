@@ -45,7 +45,7 @@ public class CreateNewAgencies {
     public WebElement agencyType;
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/form/div[4]/button")
     public WebElement addAgencyButton;
-    public String[] data={"hassan","hassan.balaha@travware.com","1258,nasr Rd , c2","01288718221","223344332","5","1","travel_agency"};
+    public String[] data={"hassan","hassan.balaha@travware.com","1258,nasr Rd , c2","01288718221","223344332","5","Active","Corporate"};
     //---------------name( 0 ),--------------email( 1 )-------address( 2 )-------- phone number( 3 )---tax number( 4 )--number of employees( 5 )
     // --status (inActive)( 6 )--agencyType(  7  )
     char[] countryCodeInit ={'E','G'};
@@ -74,14 +74,10 @@ public class CreateNewAgencies {
         Select statusListOptions=new Select(agencyStatus);
         statusListOptions.selectByIndex(Integer.parseInt(data[6]));
     }
-    public void setAgencyType() throws AWTException {
-        Robot newRobot = new Robot();
+    public void setAgencyType(WebDriver driver) throws AWTException, FileNotFoundException {
+        ReusableMethods reusables = new ReusableMethods(driver);
         agencyType.click();
-        newRobot.keyPress(KeyEvent.VK_DOWN);
-        newRobot.keyRelease(KeyEvent.VK_DOWN);
-        newRobot.keyPress(KeyEvent.VK_ENTER);
-        newRobot.keyRelease(KeyEvent.VK_ENTER);
-
+        reusables.setType(data[7]);
     }
     public void setAgencyCountryCode(WebDriver driver) throws AWTException {
         Select selectTypeOptions = new Select(countryCode);
@@ -89,7 +85,6 @@ public class CreateNewAgencies {
         newRobot.delay(300);
         selectTypeOptions.selectByValue("EG");
     }
-
     public void addAgency(WebDriver driver){
         try {
             addAgencyButton.click();
@@ -98,6 +93,16 @@ public class CreateNewAgencies {
             String local=alerrtDetect.get(0).findElement(By.tagName("li")).getText();
 
         }
+    }
+    public void editAgency(WebDriver driver,String[] data) throws FileNotFoundException, AWTException {
+        WebElement[] locators={agencyName,agencyEmail,agencyAddress,agencyPhoneNumber,agencyTaxNumber,agencyNumberOfUsers};
+        //------------------------name( 0 )---------email( 1 )-----address( 2 )------phone number( 3 )-------tax number( 4 )
+        // ----number of employees( 5 )
+        ReusableMethods reusables=new ReusableMethods(driver);
+        reusables.settingCredintials(locators,data);
+        agencyType.click();
+        reusables.setType(data[7]);
+
     }
     public  CreateNewAgencies(WebDriver driver) {
         PageFactory.initElements(driver, this);

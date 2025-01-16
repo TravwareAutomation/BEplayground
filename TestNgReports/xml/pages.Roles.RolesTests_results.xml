@@ -4,24 +4,24 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="26.207">
+           time="27.187">
     <properties></properties>
 
 
 
             <testcase
+                name="regressionrole"
+                time="10.297"
+                classname="pages.Roles.RolesTests">
+            </testcase>
+            <testcase
                 name="regressionDeleteUser"
-                time="9.798"
+                time="9.595"
                 classname="pages.Roles.RolesTests">
             </testcase>
             <testcase
                 name="regressionAllRoles"
-                time="7.222"
-                classname="pages.Roles.RolesTests">
-            </testcase>
-            <testcase
-                name="regressionrole"
-                time="9.187"
+                time="7.295"
                 classname="pages.Roles.RolesTests">
             </testcase>
 </testsuite>

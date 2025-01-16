@@ -93,7 +93,7 @@ public class MainPageTest {
         createAgency.setCredentials(driver);
         createAgency.setAgencyStatus();
         createAgency.setAgencyCountryCode(driver);
-        createAgency.setAgencyType();
+        createAgency.setAgencyType(driver);
         createAgency.addAgency(driver);
     }
 }
