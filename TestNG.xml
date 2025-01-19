@@ -49,20 +49,6 @@
         </classes>
     </test>
 
-<!--    <test name="Test3">-->
-<!--    <classes>-->
-<!--        <class name="com.example.beaportal.MainPageTest">-->
-<!--            <methods>-->
-<!--                <exclude name="regressionflight"/>-->
-<!--                <include name="regressionrole"/>-->
-<!--                <include name="regressiondash"/>-->
-<!--                <include name="regressionAllRoles"/>-->
-<!--                <include name="regressionDeleteUser"/>-->
-<!--                <exclude name="editTest"/>-->
-<!--                <include name="creatingNewUser"/>-->
-<!--            </methods>-->
-<!--        </class>-->
-<!--    </classes>-->
-<!--</test>-->
+
 
 </suite>
