@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test1"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="32.792">
+    <properties></properties>
+
+
+
+            <testcase
+                name="creatingNewUser"
+                time="17.737"
+                classname="pages.Users.UsersTests">
+            </testcase>
+            <testcase
+                name="allUsresSearch"
+                time="15.055"
+                classname="pages.Users.UsersTests">
+            </testcase>
+</testsuite>
